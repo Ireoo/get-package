@@ -355,19 +355,23 @@ module.exports = /******/ (function(modules, runtime) {
       const fs = __webpack_require__(747)
       const core = __webpack_require__(470)
 
-      try {
-        const packagePath = core.getInput('path', { required: true })
+      async function run() {
+        try {
+          const packagePath = core.getInput('path', { required: true })
 
-        const package_file = fs.readFileSync(packagePath)
+          const package_file = fs.readFileSync(packagePath)
 
-        const package = JSON.parse(package_file)
+          const package = JSON.parse(package_file)
 
-        console.log(JSON.stringify(package, null, 2))
+          console.log(JSON.stringify(package, null, 2))
 
-        core.setOutput('package', package)
-      } catch (error) {
-        core.setFailed(error.message)
+          core.setOutput('package', package)
+        } catch (error) {
+          core.setFailed(error.message)
+        }
       }
+
+      run()
 
       /***/
     }
