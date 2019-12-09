@@ -10,7 +10,7 @@ async function run() {
     const package = JSON.parse(package_file)
     console.log(JSON.stringify(package, null, 2))
 
-    core.setOutput(key, package[key])
+    core.setOutput(key, eval(`package.${key}`))
   } catch (error) {
     core.setFailed(error.message)
   }

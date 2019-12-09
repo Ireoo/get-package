@@ -20,6 +20,7 @@ steps:
     uses: Ireoo/get-package@v1
     with:
         path: ./package.json
+        key: version
 - name: Echo package
-    run: echo 'Latest version is ${{ steps.package.outputs.package }}.'
+    run: echo 'Latest version is ${{ toJSON(steps.package.outputs) }}.'
 ```

@@ -6,8 +6,8 @@ inputs:
   path:
     description: 'package.json address'
 outputs:
-  package: # id of output
-    description: 'your package.json infos(json format)'
+  <key>: # this from inputs key
+    description: 'your package.json info'
 branding:
   icon: arrow-down
   color: white
