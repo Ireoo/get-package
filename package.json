@@ -1,0 +1,32 @@
+{
+  "name": "get-package",
+  "version": "1.0.0",
+  "private": true,
+  "description": "> **Github Action**",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build version.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build && git add dist/ && pretty-quick --staged"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/actions/upload-release-asset"
+  },
+  "keywords": ["actions", "node"],
+  "author": "S2",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.1.1"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.20.5",
+    "eslint": "^6.3.0",
+    "jest": "^24.9.0",
+    "pretty-quick": "^2.0.1",
+    "husky": "^3.0.5"
+  }
+}

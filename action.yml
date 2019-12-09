@@ -1,0 +1,10 @@
+# action.yml
+name: "Get Package Version"
+author: S2
+description: "get your package.json infos"
+inputs:
+  path:
+    description: 'package.json address'
+outputs:
+  package: # id of output
+    description: "your package.json infos(json format)"
