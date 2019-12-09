@@ -8,6 +8,8 @@ try {
 
   const package = JSON.parse(package_file)
 
+  console.log(JSON.stringify(package, null, 2))
+
   core.setOutput('package', package)
 } catch (error) {
   core.setFailed(error.message)
