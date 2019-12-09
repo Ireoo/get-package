@@ -5,9 +5,15 @@ description: 'get your package.json infos'
 inputs:
   path:
     description: 'package.json address'
+  key:
+    description: 'key in package.json'
+  content:
+    description: 'content file'
 outputs:
   <key>: # this from inputs key
     description: 'your package.json info'
+  content:
+    description: 'content from your inputs content file'
 branding:
   icon: arrow-down
   color: white

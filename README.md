@@ -19,8 +19,9 @@ steps:
     id: package
     uses: Ireoo/get-package@v1
     with:
-        path: ./package.json
-        key: version
-- name: Echo package
-    run: echo 'Latest version is ${{ toJSON(steps.package.outputs) }}.'
+        path: ./package.json # (must)
+        key: version         # (must)
+        content: ./update.md # (this file address, no must)
+- name: Echo package and content
+    run: echo '${{ toJSON(steps.package.outputs) }}.'
 ```
