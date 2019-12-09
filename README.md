@@ -18,6 +18,8 @@ steps:
 - name: Get package version
     id: package
     uses: Ireoo/get-package@v1
+    with:
+        path: ./package.json
 - name: Echo package
     run: echo 'Latest version is ${{ steps.package.outputs.package }}.'
 ```
